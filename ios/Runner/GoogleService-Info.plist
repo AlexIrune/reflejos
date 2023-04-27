@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>100090630429-fuscqv6keon4mf3d3fh0hkq4go8ri3i8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.100090630429-fuscqv6keon4mf3d3fh0hkq4go8ri3i8</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>100090630429-e83ihdrcru9fttg7h6r5larntgqif7gi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC5ibWR8cZaJfMmg5Sn2fjHFl7mxjhbuLc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>100090630429</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cipestella.reflejos</string>
+	<key>PROJECT_ID</key>
+	<string>reflejos-estelladam</string>
+	<key>STORAGE_BUCKET</key>
+	<string>reflejos-estelladam.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:100090630429:ios:b3c21ba74c8cf3405e51f4</string>
+</dict>
+</plist>

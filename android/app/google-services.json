@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "100090630429",
+    "project_id": "reflejos-estelladam",
+    "storage_bucket": "reflejos-estelladam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100090630429:android:efe860a6935d0b085e51f4",
+        "android_client_info": {
+          "package_name": "cipestella.reflejos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100090630429-e83ihdrcru9fttg7h6r5larntgqif7gi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cipestella.reflejos",
+            "certificate_hash": "6695ed41991bc5b85b0e40ba9a12b56674bca7bb"
+          }
+        },
+        {
+          "client_id": "100090630429-niuiu825agpebdbi39l9qffvhvqpi5pi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cipestella.reflejos",
+            "certificate_hash": "061ba37ff5687175ddd215450a5901dcb6a97f1d"
+          }
+        },
+        {
+          "client_id": "100090630429-qpmpcd0402v0drprgvcn546165lv61q9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cipestella.reflejos",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "100090630429-97o2h3m01a0ui0luamp0islsagvqnl8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdp1fzV7x8gEtMwhRjS4D9ocOnMMU6FMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100090630429-0sgc7mt8qaanoelsf6hja0f36d9akrv4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "100090630429-fuscqv6keon4mf3d3fh0hkq4go8ri3i8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cipestella.reflejos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
