@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'programas_model.dart';
 export 'programas_model.dart';
 
@@ -50,20 +51,20 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
           automaticallyImplyLeading: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100.0,
-            height: 45.0,
+            width: 100,
+            height: 45,
             fit: BoxFit.cover,
           ),
           actions: [],
           centerTitle: true,
-          elevation: 4.0,
+          elevation: 4,
         ),
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                 child: Text(
                   'Programas',
                   textAlign: TextAlign.center,
@@ -76,25 +77,24 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            50.0, 50.0, 50.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 20.0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                               child: Text(
                                 'Tus programas',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 25.0,
-                                    ),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 25,
+                                ),
                               ),
                             ),
                             StreamBuilder<List<ProgramasRecord>>(
@@ -109,8 +109,8 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
+                                      width: 50,
+                                      height: 50,
                                       child: CircularProgressIndicator(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -119,23 +119,24 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                   );
                                 }
                                 List<ProgramasRecord>
-                                    listViewProgramasRecordList =
-                                    snapshot.data!;
+                                listViewProgramasRecordList =
+                                snapshot.data!;
                                 return ListView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
                                   padding: EdgeInsets.zero,
                                   shrinkWrap: true,
                                   scrollDirection: Axis.vertical,
                                   itemCount: listViewProgramasRecordList.length,
                                   itemBuilder: (context, listViewIndex) {
                                     final listViewProgramasRecord =
-                                        listViewProgramasRecordList[
-                                            listViewIndex];
+                                    listViewProgramasRecordList[
+                                    listViewIndex];
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -147,13 +148,13 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                 focusColor: Colors.transparent,
                                                 hoverColor: Colors.transparent,
                                                 highlightColor:
-                                                    Colors.transparent,
+                                                Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
                                                     'programa',
                                                     queryParams: {
                                                       'referenciaPrograma':
-                                                          serializeParam(
+                                                      serializeParam(
                                                         listViewProgramasRecord
                                                             .reference,
                                                         ParamType
@@ -164,69 +165,69 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                 },
                                                 child: Column(
                                                   mainAxisSize:
-                                                      MainAxisSize.min,
+                                                  MainAxisSize.min,
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                                   children: [
                                                     Row(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                      MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                       children: [
                                                         Text(
                                                           listViewProgramasRecord
                                                               .nombre!,
                                                           style: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 20.0,
-                                                              ),
+                                                            fontFamily:
+                                                            'Poppins',
+                                                            fontSize: 20,
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
                                                     Row(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                      MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceEvenly,
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                       children: [
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
+                                                          CrossAxisAlignment
+                                                              .center,
                                                           children: [
                                                             Icon(
                                                               Icons.person,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .participantes!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -234,32 +235,32 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                         ),
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           children: [
                                                             Icon(
                                                               Icons.alarm,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .tiempoCiclos!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -267,33 +268,33 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                         ),
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           children: [
                                                             Icon(
                                                               Icons
                                                                   .wb_twighlight,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .dispositivos!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -309,53 +310,34 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                                 children: [
                                                   Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                     children: [
                                                       FlutterFlowIconButton(
                                                         borderColor:
-                                                            Colors.transparent,
-                                                        borderRadius: 30.0,
-                                                        borderWidth: 1.0,
-                                                        buttonSize: 24.0,
-                                                        icon: Icon(
-                                                          Icons.cancel,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          size: 24.0,
-                                                        ),
-                                                        onPressed: () async {
-                                                          await listViewProgramasRecord
-                                                              .reference
-                                                              .delete();
-                                                        },
-                                                      ),
-                                                      FlutterFlowIconButton(
-                                                        borderColor:
-                                                            Colors.transparent,
-                                                        borderRadius: 30.0,
-                                                        borderWidth: 1.0,
-                                                        buttonSize: 20.0,
+                                                        Colors.transparent,
+                                                        borderRadius: 30,
+                                                        borderWidth: 1,
+                                                        buttonSize: 24,
                                                         icon: FaIcon(
                                                           FontAwesomeIcons.pen,
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .primaryText,
-                                                          size: 20.0,
+                                                          size: 20,
                                                         ),
                                                         onPressed: () async {
                                                           context.pushNamed(
                                                             'editar_programa',
                                                             queryParams: {
                                                               'referenciaPrograma':
-                                                                  serializeParam(
+                                                              serializeParam(
                                                                 listViewProgramasRecord
                                                                     .reference,
                                                                 ParamType
@@ -363,6 +345,25 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                               ),
                                                             }.withoutNulls,
                                                           );
+                                                        },
+                                                      ),
+                                                      FlutterFlowIconButton(
+                                                        borderColor:
+                                                        Colors.transparent,
+                                                        borderRadius: 30,
+                                                        borderWidth: 1,
+                                                        buttonSize: 24,
+                                                        icon: Icon(
+                                                          Icons.cancel,
+                                                          color: FlutterFlowTheme
+                                                              .of(context)
+                                                              .error,
+                                                          size: 24,
+                                                        ),
+                                                        onPressed: () async {
+                                                          await listViewProgramasRecord
+                                                              .reference
+                                                              .delete();
                                                         },
                                                       ),
                                                     ],
@@ -373,7 +374,7 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                           ],
                                         ),
                                         Divider(
-                                          thickness: 1.0,
+                                          thickness: 1,
                                           color: FlutterFlowTheme.of(context)
                                               .accent4,
                                         ),
@@ -387,25 +388,24 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            50.0, 50.0, 50.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 20.0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                               child: Text(
                                 'Programas predeterminados',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 25.0,
-                                    ),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 25,
+                                ),
                               ),
                             ),
                             StreamBuilder<List<ProgramasRecord>>(
@@ -420,8 +420,8 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
+                                      width: 50,
+                                      height: 50,
                                       child: CircularProgressIndicator(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -430,23 +430,24 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                   );
                                 }
                                 List<ProgramasRecord>
-                                    listViewProgramasRecordList =
-                                    snapshot.data!;
+                                listViewProgramasRecordList =
+                                snapshot.data!;
                                 return ListView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
                                   padding: EdgeInsets.zero,
                                   shrinkWrap: true,
                                   scrollDirection: Axis.vertical,
                                   itemCount: listViewProgramasRecordList.length,
                                   itemBuilder: (context, listViewIndex) {
                                     final listViewProgramasRecord =
-                                        listViewProgramasRecordList[
-                                            listViewIndex];
+                                    listViewProgramasRecordList[
+                                    listViewIndex];
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -458,13 +459,13 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                 focusColor: Colors.transparent,
                                                 hoverColor: Colors.transparent,
                                                 highlightColor:
-                                                    Colors.transparent,
+                                                Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
                                                     'programa',
                                                     queryParams: {
                                                       'referenciaPrograma':
-                                                          serializeParam(
+                                                      serializeParam(
                                                         listViewProgramasRecord
                                                             .reference,
                                                         ParamType
@@ -475,69 +476,69 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                 },
                                                 child: Column(
                                                   mainAxisSize:
-                                                      MainAxisSize.min,
+                                                  MainAxisSize.min,
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                                   children: [
                                                     Row(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                      MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                       children: [
                                                         Text(
                                                           listViewProgramasRecord
                                                               .nombre!,
                                                           style: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 20.0,
-                                                              ),
+                                                            fontFamily:
+                                                            'Poppins',
+                                                            fontSize: 20,
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
                                                     Row(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                      MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceEvenly,
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                       children: [
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
+                                                          CrossAxisAlignment
+                                                              .center,
                                                           children: [
                                                             Icon(
                                                               Icons.person,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .participantes!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -545,32 +546,32 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                         ),
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           children: [
                                                             Icon(
                                                               Icons.alarm,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .tiempoCiclos!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -578,33 +579,33 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                                         ),
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           children: [
                                                             Icon(
                                                               Icons
                                                                   .wb_twighlight,
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .logoAzul,
-                                                              size: 24.0,
+                                                              size: 24,
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  10,
+                                                                  0,
+                                                                  0,
+                                                                  0),
                                                               child: Text(
                                                                 listViewProgramasRecord
                                                                     .dispositivos!
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodyMedium,
                                                               ),
                                                             ),
@@ -619,7 +620,7 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
                                           ],
                                         ),
                                         Divider(
-                                          thickness: 1.0,
+                                          thickness: 1,
                                           color: FlutterFlowTheme.of(context)
                                               .accent4,
                                         ),

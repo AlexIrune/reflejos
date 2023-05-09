@@ -13,6 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'editar_usuario_model.dart';
 export 'editar_usuario_model.dart';
 
@@ -57,8 +58,8 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primary,
               ),
@@ -77,31 +78,29 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
               automaticallyImplyLeading: true,
               title: Image.asset(
                 'assets/images/logo.png',
-                width: 100.0,
-                height: 45.0,
+                width: 100,
+                height: 45,
                 fit: BoxFit.cover,
               ),
               actions: [],
               centerTitle: true,
-              elevation: 4.0,
+              elevation: 4,
             ),
             body: SafeArea(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                    child: Text(
-                      'Editar usuario',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).headlineLarge,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                      child: Text(
+                        'Editar usuario',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).headlineLarge,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                    child: SingleChildScrollView(
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,14 +111,14 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryText,
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -128,8 +127,11 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                   child: TextFormField(
                                     controller: _model.textController1 ??=
                                         TextEditingController(
-                                      text: editarUsuarioUsuariosRecord.nombre,
-                                    ),
+                                          text: editarUsuarioUsuariosRecord.nombre,
+                                        ),
+                                    onChanged: (event) {
+                                      setState(() {});
+                                    },
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -139,7 +141,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -149,7 +151,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -159,7 +161,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       errorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -169,7 +171,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedErrorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -180,11 +182,11 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                         FontAwesomeIcons.pen,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 30.0,
+                                        size: 30,
                                       ),
                                     ),
                                     style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                     validator: _model.textController1Validator
                                         .asValidator(context),
                                   ),
@@ -193,7 +195,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             ),
                           ),
                           Divider(
-                            thickness: 1.0,
+                            thickness: 1,
                             color: FlutterFlowTheme.of(context).accent4,
                           ),
                           Text(
@@ -201,38 +203,37 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryText,
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
                                   icon: Icon(
                                     Icons.calendar_today,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                   onPressed: () async {
                                     final _datePickedDate =
-                                        await showDatePicker(
+                                    await showDatePicker(
                                       context: context,
                                       initialDate: editarUsuarioUsuariosRecord
                                           .fechaNacimiento!,
                                       firstDate: DateTime(1900),
-                                      lastDate: editarUsuarioUsuariosRecord
-                                          .fechaNacimiento!,
+                                      lastDate: getCurrentTimestamp,
                                     );
 
                                     if (_datePickedDate != null) {
@@ -250,9 +251,8 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      editarUsuarioUsuariosRecord
-                                          .fechaNacimiento!
-                                          .toString(),
+                                      dateTimeFormat('d/M/y', editarUsuarioUsuariosRecord
+                                          .fechaNacimiento!).toString(),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -268,7 +268,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             ),
                           ),
                           Divider(
-                            thickness: 1.0,
+                            thickness: 1,
                             color: FlutterFlowTheme.of(context).accent4,
                           ),
                           Text(
@@ -276,14 +276,14 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryText,
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -291,37 +291,37 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                 Expanded(
                                   child: FlutterFlowDropDown<String>(
                                     controller:
-                                        _model.dropDownValueController ??=
-                                            FormFieldController<String>(
-                                      _model.dropDownValue ??=
-                                          editarUsuarioUsuariosRecord.sexo,
-                                    ),
+                                    _model.dropDownValueController ??=
+                                        FormFieldController<String>(
+                                          _model.dropDownValue ??=
+                                              editarUsuarioUsuariosRecord.sexo,
+                                        ),
                                     options: ['Hombre', 'Mujer', 'Otro'],
                                     onChanged: (val) => setState(
-                                        () => _model.dropDownValue = val),
-                                    width: 180.0,
-                                    height: 50.0,
+                                            () => _model.dropDownValue = val),
+                                    width: 180,
+                                    height: 50,
                                     searchHintTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                            ),
+                                    FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                     textStyle:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                     hintText: 'Seleccione el sexo',
                                     searchHintText: 'Search for an item...',
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    elevation: 2.0,
+                                    elevation: 2,
                                     borderColor: Colors.transparent,
-                                    borderWidth: 0.0,
-                                    borderRadius: 0.0,
+                                    borderWidth: 0,
+                                    borderRadius: 0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 4.0, 12.0, 4.0),
+                                        12, 4, 12, 4),
                                     hidesUnderline: true,
                                     isSearchable: false,
                                   ),
@@ -330,22 +330,22 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             ),
                           ),
                           Divider(
-                            thickness: 1.0,
+                            thickness: 1,
                             color: FlutterFlowTheme.of(context).accent4,
                           ),
                           Text(
-                            'Altura',
+                            'Altura (cm)',
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryText,
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -354,9 +354,12 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                   child: TextFormField(
                                     controller: _model.textController2 ??=
                                         TextEditingController(
-                                      text: editarUsuarioUsuariosRecord.altura
-                                          ?.toString(),
-                                    ),
+                                          text: editarUsuarioUsuariosRecord.altura
+                                              ?.toString(),
+                                        ),
+                                    onChanged: (event) {
+                                      setState(() {});
+                                    },
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -366,7 +369,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -376,7 +379,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -386,7 +389,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       errorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -396,7 +399,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedErrorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -407,11 +410,11 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                         FontAwesomeIcons.pen,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 30.0,
+                                        size: 30,
                                       ),
                                     ),
                                     style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textController2Validator
                                         .asValidator(context),
@@ -425,22 +428,22 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             ),
                           ),
                           Divider(
-                            thickness: 1.0,
+                            thickness: 1,
                             color: FlutterFlowTheme.of(context).accent4,
                           ),
                           Text(
-                            'Peso',
+                            'Peso (kg)',
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryText,
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -449,9 +452,12 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                   child: TextFormField(
                                     controller: _model.textController3 ??=
                                         TextEditingController(
-                                      text: editarUsuarioUsuariosRecord.peso
-                                          ?.toString(),
-                                    ),
+                                          text: editarUsuarioUsuariosRecord.peso
+                                              ?.toString(),
+                                        ),
+                                    onChanged: (event) {
+                                      setState(() {});
+                                    },
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -461,7 +467,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -471,7 +477,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -481,7 +487,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       errorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -491,7 +497,7 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                       focusedErrorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1.0,
+                                          width: 1,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -502,11 +508,11 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                                         FontAwesomeIcons.pen,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 30.0,
+                                        size: 30,
                                       ),
                                     ),
                                     style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textController3Validator
                                         .asValidator(context),
@@ -520,54 +526,54 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                             ),
                           ),
                           Divider(
-                            thickness: 1.0,
+                            thickness: 1,
                             color: FlutterFlowTheme.of(context).accent4,
                           ),
                           FFButtonWidget(
                             onPressed: (_model.textController1.text == null ||
-                                        _model.textController1.text == '') ||
-                                    (_model.dropDownValue == null ||
-                                        _model.dropDownValue == '') ||
-                                    (_model.textController2.text == null ||
-                                        _model.textController2.text == '') ||
-                                    (_model.textController3.text == null ||
-                                        _model.textController3.text == '')
+                                _model.textController1.text == '') ||
+                                (_model.dropDownValue == null ||
+                                    _model.dropDownValue == '') ||
+                                (_model.textController2.text == null ||
+                                    _model.textController2.text == '') ||
+                                (_model.textController3.text == null ||
+                                    _model.textController3.text == '')
                                 ? null
                                 : () async {
-                                    final usuariosUpdateData =
-                                        createUsuariosRecordData(
-                                      nombre: _model.textController1.text,
-                                      sexo: _model.dropDownValue,
-                                      altura: int.tryParse(
-                                          _model.textController2.text),
-                                      peso: double.tryParse(
-                                          _model.textController3.text),
-                                      fechaNacimiento: _model.datePicked,
-                                    );
-                                    await widget.referenceUsuario!
-                                        .update(usuariosUpdateData);
-                                    context.safePop();
-                                  },
+                              final usuariosUpdateData =
+                              createUsuariosRecordData(
+                                nombre: _model.textController1.text,
+                                sexo: _model.dropDownValue,
+                                altura: int.tryParse(
+                                    _model.textController2.text),
+                                peso: double.tryParse(
+                                    _model.textController3.text),
+                                fechaNacimiento: _model.datePicked,
+                              );
+                              await widget.referenceUsuario!
+                                  .update(usuariosUpdateData);
+                              context.safePop();
+                            },
                             text: 'Guardar',
                             options: FFButtonOptions(
-                              width: 130.0,
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
+                              width: 130,
+                              height: 40,
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              iconPadding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               color: Color(0xFF393939),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                  ),
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                              ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1.0,
+                                width: 1,
                               ),
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(8),
                               disabledColor: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               disabledTextColor: FlutterFlowTheme.of(context)
@@ -577,8 +583,8 @@ class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

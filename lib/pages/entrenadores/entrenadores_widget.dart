@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'entrenadores_model.dart';
 export 'entrenadores_model.dart';
 
@@ -45,7 +46,7 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
         queryBuilder: (entrenadoresRecord) => entrenadoresRecord
             .where('activo', isEqualTo: true)
             .where('uid',
-                isEqualTo: currentUserUid != '' ? currentUserUid : null),
+            isEqualTo: currentUserUid != '' ? currentUserUid : null),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
@@ -53,8 +54,8 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primary,
               ),
@@ -62,11 +63,11 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
           );
         }
         List<EntrenadoresRecord> entrenadoresEntrenadoresRecordList =
-            snapshot.data!;
+        snapshot.data!;
         final entrenadoresEntrenadoresRecord =
-            entrenadoresEntrenadoresRecordList.isNotEmpty
-                ? entrenadoresEntrenadoresRecordList.first
-                : null;
+        entrenadoresEntrenadoresRecordList.isNotEmpty
+            ? entrenadoresEntrenadoresRecordList.first
+            : null;
         return GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Scaffold(
@@ -78,47 +79,46 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
               automaticallyImplyLeading: true,
               title: Image.asset(
                 'assets/images/logo.png',
-                width: 100.0,
-                height: 45.0,
+                width: 100,
+                height: 45,
                 fit: BoxFit.cover,
               ),
               actions: [],
               centerTitle: true,
-              elevation: 4.0,
+              elevation: 4,
             ),
             body: SafeArea(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                    child: Text(
-                      'Gestionar entrenadores',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 42.0,
-                          ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                      child: Text(
+                        'Gestionar entrenadores',
+                        textAlign: TextAlign.center,
+                        style:
+                        FlutterFlowTheme.of(context).displaySmall.override(
+                          fontFamily: 'Poppins',
+                          fontSize: 42,
+                        ),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                    child: SingleChildScrollView(
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 50.0, 0.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
+                                        0, 0, 0, 10),
                                     child: Text(
                                       'Entrenador actual',
                                       textAlign: TextAlign.center,
@@ -131,31 +131,32 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 10.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 20.0, 0.0),
+                                      10, 0, 20, 0),
                                   child: Text(
-                                    entrenadoresEntrenadoresRecord!.nombre!,
+                                    entrenadoresEntrenadoresRecord != null ? entrenadoresEntrenadoresRecord.nombre! : "",
                                     style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
+                                entrenadoresEntrenadoresRecord != null ?
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
                                   icon: FaIcon(
                                     FontAwesomeIcons.pen,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
@@ -169,20 +170,20 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                                       }.withoutNulls,
                                     );
                                   },
-                                ),
+                                ) : Row(),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 50.0, 0.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
+                                        0, 0, 0, 10),
                                     child: Text(
                                       'Lista entrenadores',
                                       textAlign: TextAlign.center,
@@ -207,40 +208,41 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
+                                    width: 50,
+                                    height: 50,
                                     child: CircularProgressIndicator(
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
                                 );
                               }
                               List<EntrenadoresRecord>
-                                  listViewEntrenadoresRecordList =
-                                  snapshot.data!;
+                              listViewEntrenadoresRecordList =
+                              snapshot.data!;
                               return ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.zero,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount:
-                                    listViewEntrenadoresRecordList.length,
+                                listViewEntrenadoresRecordList.length,
                                 itemBuilder: (context, listViewIndex) {
                                   final listViewEntrenadoresRecord =
-                                      listViewEntrenadoresRecordList[
-                                          listViewIndex];
+                                  listViewEntrenadoresRecordList[
+                                  listViewIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 10.0, 10.0, 10.0),
+                                        10, 10, 10, 10),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 20.0, 0.0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 20, 0),
                                           child: Text(
                                             listViewEntrenadoresRecord.nombre!,
                                             style: FlutterFlowTheme.of(context)
@@ -249,21 +251,21 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 60.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 60,
                                           icon: FaIcon(
                                             FontAwesomeIcons.pen,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             context.pushNamed(
                                               'editar_entrenador',
                                               queryParams: {
                                                 'referenciaEntrenador':
-                                                    serializeParam(
+                                                serializeParam(
                                                   listViewEntrenadoresRecord
                                                       .reference,
                                                   ParamType.DocumentReference,
@@ -274,45 +276,45 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 60.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 60,
                                           icon: Icon(
                                             Icons.compare_arrows,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             final entrenadoresUpdateData1 =
-                                                createEntrenadoresRecordData(
+                                            createEntrenadoresRecordData(
                                               activo: true,
                                             );
                                             await listViewEntrenadoresRecord
                                                 .reference
                                                 .update(
-                                                    entrenadoresUpdateData1);
+                                                entrenadoresUpdateData1);
 
                                             final entrenadoresUpdateData2 =
-                                                createEntrenadoresRecordData(
+                                            createEntrenadoresRecordData(
                                               activo: false,
                                             );
                                             await entrenadoresEntrenadoresRecord!
                                                 .reference
                                                 .update(
-                                                    entrenadoresUpdateData2);
+                                                entrenadoresUpdateData2);
                                           },
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 50.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 50,
                                           icon: Icon(
                                             Icons.cancel,
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             await listViewEntrenadoresRecord
@@ -328,19 +330,19 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                             },
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                100.0, 0.0, 100.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(100, 0, 100, 0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 100.0,
-                              borderWidth: 1.0,
-                              buttonSize: 60.0,
+                              borderRadius: 100,
+                              borderWidth: 1,
+                              buttonSize: 60,
                               fillColor: FlutterFlowTheme.of(context).logoAzul,
                               icon: Icon(
                                 Icons.add,
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                size: 30.0,
+                                size: 30,
                               ),
                               onPressed: () async {
                                 // IrAnadirDispositivos
@@ -352,8 +354,8 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

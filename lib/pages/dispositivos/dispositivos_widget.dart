@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'dispositivos_model.dart';
 export 'dispositivos_model.dart';
 
@@ -48,29 +49,29 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
           automaticallyImplyLeading: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100.0,
-            height: 45.0,
+            width: 100,
+            height: 45,
             fit: BoxFit.cover,
           ),
           actions: [],
           centerTitle: true,
-          elevation: 4.0,
+          elevation: 4,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: Text(
-                  'Dispositivos',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).displaySmall,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  child: Text(
+                    'Dispositivos',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).displaySmall,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                child: SingleChildScrollView(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -85,7 +86,7 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                             children: [
                               Container(
                                 width: double.infinity,
-                                height: 55.0,
+                                height: 55,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -96,7 +97,7 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -104,19 +105,18 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                                             Text(
                                               'NombreDispositivo',
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(10, 0, 0, 0),
                                               child: Icon(
                                                 Icons.edit,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                                size: 24.0,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBtnText,
+                                                size: 24,
                                               ),
                                             ),
                                           ],
@@ -124,24 +124,23 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           children: [
                                             FaIcon(
                                               FontAwesomeIcons.batteryFull,
                                               color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .logoAzul,
-                                              size: 24.0,
+                                              FlutterFlowTheme.of(context)
+                                                  .logoAzul,
+                                              size: 24,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(10, 0, 0, 0),
                                               child: Text(
                                                 'Bateria%',
                                                 style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium,
                                               ),
                                             ),
                                           ],
@@ -156,37 +155,37 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
+                                              CrossAxisAlignment.end,
                                               children: [
                                                 Switch(
                                                   value: _model.switchValue ??=
-                                                      true,
+                                                  true,
                                                   onChanged: (newValue) async {
                                                     setState(() =>
-                                                        _model.switchValue =
-                                                            newValue!);
+                                                    _model.switchValue =
+                                                    newValue!);
                                                   },
                                                   activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .logoAzul,
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .logoAzul,
                                                   inactiveThumbColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .secondaryBackground,
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.2),
+                                                  AlignmentDirectional(
+                                                      0, 0.2),
                                                   child: Icon(
                                                     Icons.cancel,
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .logoRojo,
-                                                    size: 30.0,
+                                                    size: 30,
                                                   ),
                                                 ),
                                               ],
@@ -199,7 +198,7 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                                 ),
                               ),
                               Divider(
-                                thickness: 1.0,
+                                thickness: 1,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
@@ -208,19 +207,18 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            100.0, 0.0, 100.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(100, 0, 100, 0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 100.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
+                          borderRadius: 100,
+                          borderWidth: 1,
+                          buttonSize: 60,
                           fillColor: FlutterFlowTheme.of(context).logoAzul,
                           icon: Icon(
                             Icons.add,
                             color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            size: 30.0,
+                            FlutterFlowTheme.of(context).primaryBackground,
+                            size: 30,
                           ),
                           onPressed: () async {
                             // IrAnadirDispositivos
@@ -232,8 +230,8 @@ class _DispositivosWidgetState extends State<DispositivosWidget> {
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

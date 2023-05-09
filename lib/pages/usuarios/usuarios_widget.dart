@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'usuarios_model.dart';
 export 'usuarios_model.dart';
 
@@ -52,8 +53,8 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primary,
               ),
@@ -75,47 +76,46 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
               automaticallyImplyLeading: true,
               title: Image.asset(
                 'assets/images/logo.png',
-                width: 100.0,
-                height: 45.0,
+                width: 100,
+                height: 45,
                 fit: BoxFit.cover,
               ),
               actions: [],
               centerTitle: true,
-              elevation: 4.0,
+              elevation: 4,
             ),
             body: SafeArea(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                    child: Text(
-                      'Gestionar usuarios',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 42.0,
-                          ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                      child: Text(
+                        'Gestionar usuarios',
+                        textAlign: TextAlign.center,
+                        style:
+                        FlutterFlowTheme.of(context).displaySmall.override(
+                          fontFamily: 'Poppins',
+                          fontSize: 42,
+                        ),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                    child: SingleChildScrollView(
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 50.0, 0.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
+                                        0, 0, 0, 10),
                                     child: Text(
                                       'Usuario actual',
                                       textAlign: TextAlign.center,
@@ -128,31 +128,31 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 10.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 20.0, 0.0),
+                                      10, 0, 20, 0),
                                   child: Text(
                                     usuariosUsuariosRecord!.nombre!,
                                     style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
                                   icon: FaIcon(
                                     FontAwesomeIcons.pen,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
@@ -170,15 +170,15 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 50.0, 0.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
+                                        0, 0, 0, 10),
                                     child: Text(
                                       'Usuarios',
                                       textAlign: TextAlign.center,
@@ -202,37 +202,38 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
+                                    width: 50,
+                                    height: 50,
                                     child: CircularProgressIndicator(
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
                                 );
                               }
                               List<UsuariosRecord> listViewUsuariosRecordList =
-                                  snapshot.data!;
+                              snapshot.data!;
                               return ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.zero,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: listViewUsuariosRecordList.length,
                                 itemBuilder: (context, listViewIndex) {
                                   final listViewUsuariosRecord =
-                                      listViewUsuariosRecordList[listViewIndex];
+                                  listViewUsuariosRecordList[listViewIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 10.0, 10.0, 10.0),
+                                        10, 10, 10, 10),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 20.0, 0.0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 20, 0),
                                           child: Text(
                                             listViewUsuariosRecord.nombre!,
                                             style: FlutterFlowTheme.of(context)
@@ -241,22 +242,22 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 60.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 60,
                                           icon: FaIcon(
                                             FontAwesomeIcons.pen,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             context.pushNamed(
                                               'editar_usuario',
                                               queryParams: {
                                                 'referenceUsuario':
-                                                    serializeParam(
-                                                  usuariosUsuariosRecord!
+                                                serializeParam(
+                                                  listViewUsuariosRecord
                                                       .reference,
                                                   ParamType.DocumentReference,
                                                 ),
@@ -266,18 +267,18 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 60.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 60,
                                           icon: Icon(
                                             Icons.compare_arrows,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             final usuariosUpdateData1 =
-                                                createUsuariosRecordData(
+                                            createUsuariosRecordData(
                                               activo: true,
                                             );
                                             await listViewUsuariosRecord
@@ -285,7 +286,7 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                                 .update(usuariosUpdateData1);
 
                                             final usuariosUpdateData2 =
-                                                createUsuariosRecordData(
+                                            createUsuariosRecordData(
                                               activo: false,
                                             );
                                             await usuariosUsuariosRecord!
@@ -295,14 +296,14 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 50.0,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 50,
                                           icon: Icon(
                                             Icons.cancel,
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           onPressed: () async {
                                             await listViewUsuariosRecord
@@ -318,19 +319,19 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                             },
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                100.0, 0.0, 100.0, 0.0),
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(100, 0, 100, 0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 100.0,
-                              borderWidth: 1.0,
-                              buttonSize: 60.0,
+                              borderRadius: 100,
+                              borderWidth: 1,
+                              buttonSize: 60,
                               fillColor: FlutterFlowTheme.of(context).logoAzul,
                               icon: Icon(
                                 Icons.add,
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                size: 30.0,
+                                size: 30,
                               ),
                               onPressed: () async {
                                 // IrAnadirDispositivos
@@ -342,8 +343,8 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

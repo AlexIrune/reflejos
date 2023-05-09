@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'ayuda_model.dart';
 export 'ayuda_model.dart';
 
@@ -46,93 +47,97 @@ class _AyudaWidgetState extends State<AyudaWidget> {
           automaticallyImplyLeading: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100.0,
-            height: 45.0,
+            width: 100,
+            height: 45,
             fit: BoxFit.cover,
           ),
           actions: [],
           centerTitle: true,
-          elevation: 4.0,
+          elevation: 4,
         ),
         body: SafeArea(
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                  child: Text(
-                    'FAQs - Ayuda',
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryText,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Text(
+                  'FAQs - Ayuda',
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Poppins',
+                    color: FlutterFlowTheme.of(context).primaryText,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '¿Como vincular un dispositivo?',
+                              style: FlutterFlowTheme.of(context).titleMedium,
+                            ),
+                            Text(
+                              'Desde el menú principal, seleccionar “Dispositivos”. Pulse el botón +. Pulse el botón + en uno de los dispositivos que aparecen en la lista. El dispositivo emitirá luz y sonido. Pase la mano por el sensor para completar la vinculación.',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ],
                         ),
+                        Divider(
+                          thickness: 1,
+                          color:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '¿Cuantos dispositibos puesdo vincular?',
+                              style: FlutterFlowTheme.of(context).titleMedium,
+                            ),
+                            Text(
+                              'Se pueden vincular hasta un máximo de 4 dispositivos.',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          thickness: 1,
+                          color:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '¿Como cambiar el nombre de un usuario?',
+                              style: FlutterFlowTheme.of(context).titleMedium,
+                            ),
+                            Text(
+                              'Debes ir a la pantalla de los usuarios y pulsar sobre lapiz del usuario que quieras cambiar el nombre. Se abrirá una pantalla donde podrás cambiar los datos del usuario.',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '¿Como vincular un dispositivo?',
-                            style: FlutterFlowTheme.of(context).titleMedium,
-                          ),
-                          Text(
-                            'Desde el menú principal, seleccionar “Dispositivos”. Pulse el botón +. Pulse el botón + en uno de los dispositivos que aparecen en la lista. El dispositivo emitirá luz y sonido. Pase la mano por el sensor para completar la vinculación.',
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '¿Cuantos dispositibos puesdo vincular?',
-                            style: FlutterFlowTheme.of(context).titleMedium,
-                          ),
-                          Text(
-                            'Se pueden vincular hasta un máximo de 4 dispositivos.',
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '¿Como cambiar el nombre de un usuario?',
-                            style: FlutterFlowTheme.of(context).titleMedium,
-                          ),
-                          Text(
-                            'Debes ir a la pantalla de los usuarios y pulsar sobre lapiz del usuario que quieras cambiar el nombre. Se abrirá una pantalla donde podrás cambiar los datos del usuario.',
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

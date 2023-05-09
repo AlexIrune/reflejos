@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'anadir_dispositivos_model.dart';
 export 'anadir_dispositivos_model.dart';
 
@@ -48,32 +49,32 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
           automaticallyImplyLeading: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100.0,
-            height: 45.0,
+            width: 100,
+            height: 45,
             fit: BoxFit.cover,
           ),
           actions: [],
           centerTitle: true,
-          elevation: 4.0,
+          elevation: 4,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: Text(
-                  'Añadir Dispositivos',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Poppins',
-                        lineHeight: 1.0,
-                      ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                  child: Text(
+                    'Añadir Dispositivos',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                      fontFamily: 'Poppins',
+                      lineHeight: 1,
+                    ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                child: SingleChildScrollView(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -88,7 +89,7 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
                             children: [
                               Container(
                                 width: double.infinity,
-                                height: 55.0,
+                                height: 55,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -96,7 +97,7 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                  MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
                                       'NombreDispositivo',
@@ -107,13 +108,13 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
                                       Icons.add_circle,
                                       color: FlutterFlowTheme.of(context)
                                           .logoVerde,
-                                      size: 24.0,
+                                      size: 24,
                                     ),
                                   ],
                                 ),
                               ),
                               Divider(
-                                thickness: 1.0,
+                                thickness: 1,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
@@ -122,19 +123,18 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            100.0, 0.0, 100.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(100, 0, 100, 0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 100.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
+                          borderRadius: 100,
+                          borderWidth: 1,
+                          buttonSize: 60,
                           fillColor: FlutterFlowTheme.of(context).logoAzul,
                           icon: Icon(
                             Icons.loop,
                             color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            size: 30.0,
+                            FlutterFlowTheme.of(context).primaryBackground,
+                            size: 30,
                           ),
                           onPressed: () {
                             print('IconButton pressed ...');
@@ -144,8 +144,8 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

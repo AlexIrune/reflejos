@@ -13,6 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'nuevo_usuario_model.dart';
 export 'nuevo_usuario_model.dart';
 
@@ -60,29 +61,29 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
           automaticallyImplyLeading: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100.0,
-            height: 45.0,
+            width: 100,
+            height: 45,
             fit: BoxFit.cover,
           ),
           actions: [],
           centerTitle: true,
-          elevation: 4.0,
+          elevation: 4,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: Text(
-                  'Nuevo usuario',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).headlineLarge,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  child: Text(
+                    'Nuevo usuario',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).headlineLarge,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
-                child: SingleChildScrollView(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,13 +92,12 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         'Nombre',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -105,16 +105,19 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                             Expanded(
                               child: TextFormField(
                                 controller: _model.textController1,
+                                onChanged: (event) {
+                                  setState(() {});
+                                },
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'Introduce la nombre',
                                   hintStyle:
-                                      FlutterFlowTheme.of(context).bodySmall,
+                                  FlutterFlowTheme.of(context).bodySmall,
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -124,7 +127,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -134,7 +137,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   errorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -144,7 +147,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedErrorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -155,7 +158,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                     FontAwesomeIcons.pen,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -167,32 +170,31 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         ),
                       ),
                       Divider(
-                        thickness: 1.0,
+                        thickness: 1,
                         color: FlutterFlowTheme.of(context).accent4,
                       ),
                       Text(
                         'Fecha nacimiento',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 30.0,
-                              borderWidth: 1.0,
-                              buttonSize: 60.0,
+                              borderRadius: 30,
+                              borderWidth: 1,
+                              buttonSize: 60,
                               icon: Icon(
                                 Icons.calendar_today,
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
+                                size: 30,
                               ),
                               onPressed: () async {
                                 final _datePickedDate = await showDatePicker(
@@ -221,19 +223,18 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         ),
                       ),
                       Divider(
-                        thickness: 1.0,
+                        thickness: 1,
                         color: FlutterFlowTheme.of(context).accent4,
                       ),
                       Text(
                         'Sexo',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -245,28 +246,28 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                 options: ['Hombre', 'Mujer', 'Otro'],
                                 onChanged: (val) =>
                                     setState(() => _model.dropDownValue = val),
-                                width: 180.0,
-                                height: 50.0,
+                                width: 180,
+                                height: 50,
                                 searchHintTextStyle:
-                                    FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                                 textStyle:
-                                    FlutterFlowTheme.of(context).bodyMedium,
+                                FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Seleccione el sexo',
                                 searchHintText: 'Search for an item...',
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                elevation: 2.0,
+                                elevation: 2,
                                 borderColor: Colors.transparent,
-                                borderWidth: 0.0,
-                                borderRadius: 0.0,
+                                borderWidth: 0,
+                                borderRadius: 0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 4.0, 12.0, 4.0),
+                                    12, 4, 12, 4),
                                 hidesUnderline: true,
                                 isSearchable: false,
                               ),
@@ -275,19 +276,18 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         ),
                       ),
                       Divider(
-                        thickness: 1.0,
+                        thickness: 1,
                         color: FlutterFlowTheme.of(context).accent4,
                       ),
                       Text(
-                        'Altura',
+                        'Altura (cm)',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -295,16 +295,19 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                             Expanded(
                               child: TextFormField(
                                 controller: _model.textController2,
+                                onChanged: (event) {
+                                  setState(() {});
+                                },
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'Introduce la altura',
                                   hintStyle:
-                                      FlutterFlowTheme.of(context).bodySmall,
+                                  FlutterFlowTheme.of(context).bodySmall,
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -314,7 +317,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -324,7 +327,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   errorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -334,7 +337,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedErrorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -345,7 +348,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                     FontAwesomeIcons.pen,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -362,19 +365,18 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         ),
                       ),
                       Divider(
-                        thickness: 1.0,
+                        thickness: 1,
                         color: FlutterFlowTheme.of(context).accent4,
                       ),
                       Text(
-                        'Peso',
+                        'Peso (kg)',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -382,16 +384,19 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                             Expanded(
                               child: TextFormField(
                                 controller: _model.textController3,
+                                onChanged: (event) {
+                                  setState(() {});
+                                },
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'Introduce el peso',
                                   hintStyle:
-                                      FlutterFlowTheme.of(context).bodySmall,
+                                  FlutterFlowTheme.of(context).bodySmall,
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -401,7 +406,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -411,7 +416,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   errorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -421,7 +426,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                   focusedErrorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
-                                      width: 1.0,
+                                      width: 1,
                                     ),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(4.0),
@@ -432,7 +437,7 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                                     FontAwesomeIcons.pen,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -449,68 +454,67 @@ class _NuevoUsuarioWidgetState extends State<NuevoUsuarioWidget> {
                         ),
                       ),
                       Divider(
-                        thickness: 1.0,
+                        thickness: 1,
                         color: FlutterFlowTheme.of(context).accent4,
                       ),
                       FFButtonWidget(
                         onPressed: (_model.textController1.text == null ||
-                                    _model.textController1.text == '') ||
-                                (_model.datePicked == null) ||
-                                (_model.dropDownValue == null ||
-                                    _model.dropDownValue == '') ||
-                                (_model.textController2.text == null ||
-                                    _model.textController2.text == '') ||
-                                (_model.textController3.text == null ||
-                                    _model.textController3.text == '')
+                            _model.textController1.text == '') ||
+                            (_model.datePicked == null) ||
+                            (_model.dropDownValue == null ||
+                                _model.dropDownValue == '') ||
+                            (_model.textController2.text == null ||
+                                _model.textController2.text == '') ||
+                            (_model.textController3.text == null ||
+                                _model.textController3.text == '')
                             ? null
                             : () async {
-                                final usuariosCreateData =
-                                    createUsuariosRecordData(
-                                  nombre: _model.textController1.text,
-                                  sexo: _model.dropDownValue,
-                                  uid: currentUserUid,
-                                  altura:
-                                      int.tryParse(_model.textController2.text),
-                                  peso: double.tryParse(
-                                      _model.textController3.text),
-                                  activo: false,
-                                  fechaNacimiento: _model.datePicked,
-                                );
-                                await UsuariosRecord.collection
-                                    .doc()
-                                    .set(usuariosCreateData);
-                                context.safePop();
-                              },
+                          final usuariosCreateData =
+                          createUsuariosRecordData(
+                            nombre: _model.textController1.text,
+                            sexo: _model.dropDownValue,
+                            uid: currentUserUid,
+                            altura:
+                            int.tryParse(_model.textController2.text),
+                            peso: double.tryParse(
+                                _model.textController3.text),
+                            activo: false,
+                            fechaNacimiento: _model.datePicked,
+                          );
+                          await UsuariosRecord.collection
+                              .doc()
+                              .set(usuariosCreateData);
+                          context.safePop();
+                        },
                         text: 'Crear',
                         options: FFButtonOptions(
-                          width: 130.0,
-                          height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          width: 130,
+                          height: 40,
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: Color(0xFF393939),
                           textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                  ),
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                          ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1.0,
+                            width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(8),
                           disabledColor:
-                              FlutterFlowTheme.of(context).primaryBackground,
+                          FlutterFlowTheme.of(context).primaryBackground,
                           disabledTextColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
