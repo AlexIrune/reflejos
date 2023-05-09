@@ -90,7 +90,7 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                       child: Text(
                         'Gestionar usuarios',
                         textAlign: TextAlign.center,
@@ -138,11 +138,12 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10, 0, 20, 0),
                                   child: Text(
-                                    usuariosUsuariosRecord!.nombre!,
+                                    usuariosUsuariosRecord != null ? usuariosUsuariosRecord!.nombre! : "",
                                     style:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
+                                usuariosUsuariosRecord != null ?
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -165,7 +166,7 @@ class _UsuariosWidgetState extends State<UsuariosWidget> {
                                       }.withoutNulls,
                                     );
                                   },
-                                ),
+                                ) : Row(),
                               ],
                             ),
                           ),

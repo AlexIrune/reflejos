@@ -90,7 +90,7 @@ class _ProgramaWidgetState extends State<ProgramaWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                    EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                     child: Text(
                       programaProgramasRecord.nombre!,
                       textAlign: TextAlign.center,

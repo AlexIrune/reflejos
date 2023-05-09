@@ -62,7 +62,7 @@ class _AyudaWidgetState extends State<AyudaWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                 child: Text(
                   'FAQs - Ayuda',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(

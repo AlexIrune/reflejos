@@ -93,7 +93,7 @@ class _EntrenadoresWidgetState extends State<EntrenadoresWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                       child: Text(
                         'Gestionar entrenadores',
                         textAlign: TextAlign.center,

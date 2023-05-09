@@ -64,7 +64,7 @@ class _ProgramasWidgetState extends State<ProgramasWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                 child: Text(
                   'Programas',
                   textAlign: TextAlign.center,

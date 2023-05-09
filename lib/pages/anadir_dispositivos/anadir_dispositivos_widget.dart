@@ -63,7 +63,7 @@ class _AnadirDispositivosWidgetState extends State<AnadirDispositivosWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(50, 30, 50, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                   child: Text(
                     'Añadir Dispositivos',
                     textAlign: TextAlign.center,

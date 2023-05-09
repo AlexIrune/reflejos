@@ -73,7 +73,7 @@ class _NuevoProgramaWidgetState extends State<NuevoProgramaWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                   child: Text(
                     'Nuevo Programa',
                     style: FlutterFlowTheme.of(context).headlineLarge,
