@@ -106,14 +106,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,17 +122,15 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                   child: TextFormField(
                                     controller: _model.textController1 ??=
                                         TextEditingController(
-                                          text:
+                                      text:
                                           editarProgramaProgramasRecord.nombre,
-                                        ),
+                                    ),
                                     onChanged: (event) {
                                       setState(() {});
                                     },
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText:
-                                      editarProgramaProgramasRecord.nombre,
                                       hintText: 'Introduce el nombre',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodySmall,
@@ -184,7 +182,7 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       ),
                                     ),
                                     style:
-                                    FlutterFlowTheme.of(context).bodyMedium,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     validator: _model.textController1Validator
                                         .asValidator(context),
                                   ),
@@ -202,14 +200,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -231,15 +229,16 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       decrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.minus,
                                         color: enabled
-                                            ? Color(0xDD000000)
-                                            : Color(0xFFEEEEEE),
+                                            ? FlutterFlowTheme.of(context)
+                                                .logoRojo
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       incrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.plus,
                                         color: enabled
                                             ? Colors.blue
-                                            : Color(0xFFEEEEEE),
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       countBuilder: (count) => Text(
@@ -253,10 +252,10 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                         ),
                                       ),
                                       count: _model.countControllerValue1 ??=
-                                      editarProgramaProgramasRecord
-                                          .dispositivos!,
+                                          editarProgramaProgramasRecord
+                                              .dispositivos!,
                                       updateCount: (count) => setState(() =>
-                                      _model.countControllerValue1 = count),
+                                          _model.countControllerValue1 = count),
                                       stepSize: 1,
                                       minimum: 1,
                                       maximum: 4,
@@ -276,14 +275,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -305,15 +304,16 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       decrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.minus,
                                         color: enabled
-                                            ? Color(0xDD000000)
-                                            : Color(0xFFEEEEEE),
+                                            ? FlutterFlowTheme.of(context)
+                                                .logoRojo
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       incrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.plus,
                                         color: enabled
                                             ? Colors.blue
-                                            : Color(0xFFEEEEEE),
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       countBuilder: (count) => Text(
@@ -327,10 +327,10 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                         ),
                                       ),
                                       count: _model.countControllerValue2 ??=
-                                      editarProgramaProgramasRecord
-                                          .participantes!,
+                                          editarProgramaProgramasRecord
+                                              .participantes!,
                                       updateCount: (count) => setState(() =>
-                                      _model.countControllerValue2 = count),
+                                          _model.countControllerValue2 = count),
                                       stepSize: 1,
                                       minimum: 1,
                                       maximum: 4,
@@ -350,14 +350,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -379,15 +379,16 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       decrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.minus,
                                         color: enabled
-                                            ? Color(0xDD000000)
-                                            : Color(0xFFEEEEEE),
+                                            ? FlutterFlowTheme.of(context)
+                                                .logoRojo
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       incrementIconBuilder: (enabled) => FaIcon(
                                         FontAwesomeIcons.plus,
                                         color: enabled
                                             ? Colors.blue
-                                            : Color(0xFFEEEEEE),
+                                            : Color(0xFF393939),
                                         size: 20,
                                       ),
                                       countBuilder: (count) => Text(
@@ -401,9 +402,9 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                         ),
                                       ),
                                       count: _model.countControllerValue3 ??=
-                                      editarProgramaProgramasRecord.ciclos!,
+                                          editarProgramaProgramasRecord.ciclos!,
                                       updateCount: (count) => setState(() =>
-                                      _model.countControllerValue3 = count),
+                                          _model.countControllerValue3 = count),
                                       stepSize: 1,
                                       minimum: 1,
                                       maximum: 4,
@@ -423,14 +424,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -439,10 +440,10 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                   child: TextFormField(
                                     controller: _model.textController2 ??=
                                         TextEditingController(
-                                          text: editarProgramaProgramasRecord
-                                              .tiempoCiclos
-                                              ?.toString(),
-                                        ),
+                                      text: editarProgramaProgramasRecord
+                                          .tiempoCiclos
+                                          ?.toString(),
+                                    ),
                                     onChanged: (event) {
                                       setState(() {});
                                     },
@@ -500,7 +501,7 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       ),
                                     ),
                                     style:
-                                    FlutterFlowTheme.of(context).bodyMedium,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textController2Validator
                                         .asValidator(context),
@@ -523,14 +524,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -539,10 +540,10 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                   child: TextFormField(
                                     controller: _model.textController3 ??=
                                         TextEditingController(
-                                          text: editarProgramaProgramasRecord
-                                              .tiempoEspera
-                                              ?.toString(),
-                                        ),
+                                      text: editarProgramaProgramasRecord
+                                          .tiempoEspera
+                                          ?.toString(),
+                                    ),
                                     onChanged: (event) {
                                       setState(() {});
                                     },
@@ -600,7 +601,7 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       ),
                                     ),
                                     style:
-                                    FlutterFlowTheme.of(context).bodyMedium,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textController3Validator
                                         .asValidator(context),
@@ -623,14 +624,14 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -639,10 +640,10 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                   child: TextFormField(
                                     controller: _model.textController4 ??=
                                         TextEditingController(
-                                          text: editarProgramaProgramasRecord
-                                              .distanciaActivacion
-                                              ?.toString(),
-                                        ),
+                                      text: editarProgramaProgramasRecord
+                                          .distanciaActivacion
+                                          ?.toString(),
+                                    ),
                                     onChanged: (event) {
                                       setState(() {});
                                     },
@@ -700,7 +701,7 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                                       ),
                                     ),
                                     style:
-                                    FlutterFlowTheme.of(context).bodyMedium,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textController4Validator
                                         .asValidator(context),
@@ -723,63 +724,64 @@ class _EditarProgramaWidgetState extends State<EditarProgramaWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryText,
-                            ),
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                           Switch(
                             value: _model.switchValue ??=
-                            editarProgramaProgramasRecord.sonido!,
+                                editarProgramaProgramasRecord.sonido!,
                             onChanged: (newValue) async {
                               setState(() => _model.switchValue = newValue!);
                             },
                           ),
                           FFButtonWidget(
                             onPressed: (_model.textController1.text == null ||
-                                _model.textController1.text == '') ||
-                                (_model.textController2.text == null ||
-                                    _model.textController2.text == '') ||
-                                (_model.textController3.text == null ||
-                                    _model.textController3.text == '') ||
-                                (_model.textController4.text == null ||
-                                    _model.textController4.text == '')
+                                        _model.textController1.text == '') ||
+                                    (_model.textController2.text == null ||
+                                        _model.textController2.text == '') ||
+                                    (_model.textController3.text == null ||
+                                        _model.textController3.text == '') ||
+                                    (_model.textController4.text == null ||
+                                        _model.textController4.text == '')
                                 ? null
                                 : () async {
-                              final programasUpdateData =
-                              createProgramasRecordData(
-                                nombre: _model.textController1.text,
-                                dispositivos:
-                                _model.countControllerValue1,
-                                participantes:
-                                _model.countControllerValue2,
-                                ciclos: _model.countControllerValue3,
-                                tiempoCiclos: int.tryParse(
-                                    _model.textController2.text),
-                                tiempoEspera: int.tryParse(
-                                    _model.textController3.text),
-                                distanciaActivacion: int.tryParse(
-                                    _model.textController4.text),
-                                sonido: _model.switchValue,
-                              );
-                              await widget.referenciaPrograma!
-                                  .update(programasUpdateData);
-                            },
+                                    final programasUpdateData =
+                                        createProgramasRecordData(
+                                      nombre: _model.textController1.text,
+                                      dispositivos:
+                                          _model.countControllerValue1,
+                                      participantes:
+                                          _model.countControllerValue2,
+                                      ciclos: _model.countControllerValue3,
+                                      tiempoCiclos: int.tryParse(
+                                          _model.textController2.text),
+                                      tiempoEspera: int.tryParse(
+                                          _model.textController3.text),
+                                      distanciaActivacion: int.tryParse(
+                                          _model.textController4.text),
+                                      sonido: _model.switchValue,
+                                    );
+                                    await widget.referenciaPrograma!
+                                        .update(programasUpdateData);
+                                    context.safePop();
+                                  },
                             text: 'Guardar',
                             options: FFButtonOptions(
                               width: 130,
                               height: 40,
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               iconPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               color: Color(0xFF393939),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                fontFamily: 'Poppins',
-                                color: Colors.white,
-                              ),
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
